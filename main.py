@@ -1,7 +1,6 @@
+# from src.categories import Categories
+# from src.products import Products
 from src.utils import create_objects_from_json
-
-from src.products import Products
-from src.categories import Categories
 
 
 def main() -> list:
@@ -18,7 +17,7 @@ if __name__ == "__main__":
         print(product.products)
 
     # Проверки для класса Products
-    # # Инициализация и проверка первого продукта
+    # Инициализация и проверка первого продукта
     # prod_1 = Products("Banana", "Color Yellow", 99.99, 20)
     # print(prod_1.name)
     # print(prod_1.description)
@@ -45,8 +44,6 @@ if __name__ == "__main__":
     #
     # prod_2.price = 110  # Снижение цены для prod_2
     # print(prod_2.price)
-    #
-    #
     #
     # # Проверки для класса Categories
     # # -------------------------
@@ -75,4 +72,4 @@ if __name__ == "__main__":
     # print(obj_category.product_counts)
     # print(obj_category.category_count)
     #
-    # print(obj_category.products_for_test)
+    # print(obj_category.products_list)

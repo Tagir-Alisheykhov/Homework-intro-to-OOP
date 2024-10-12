@@ -24,5 +24,3 @@ def create_objects_from_json() -> list:
         category["products"] = products
         categories.append(Categories(**category))
     return categories
-
-
