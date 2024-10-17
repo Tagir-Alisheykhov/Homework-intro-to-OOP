@@ -15,7 +15,7 @@ def read_json() -> dict:
 
 
 def create_objects_from_json() -> list:
-    """Обработка json-файла с помощью классов"""
+    """Обработка json-файла с помощью классов и вывод объектов"""
     categories = []
     for category in read_json():
         products = []

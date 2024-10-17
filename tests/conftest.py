@@ -1,7 +1,7 @@
 import pytest
 
-from src.products import Products
 from src.categories import Categories
+from src.products import Products
 
 
 @pytest.fixture
@@ -11,8 +11,8 @@ def first_categories():
         description="Зарубежные",
         products=[
             Products("Апельсины", "Из ЮАРа", 60.00, 1000),
-            Products("Мандарины", "Из Азербайджана", 40.00, 700)
-        ]
+            Products("Мандарины", "Из Азербайджана", 40.00, 700),
+        ],
     )
 
 
@@ -25,8 +25,8 @@ def second_categories():
             Products("Апельсины", "Из Африки", 60.00, 1000),
             Products("Мандарины", "Из Азербайджана", 40.00, 700),
             Products("Абрикосы", "Из Узбекистана", 60.00, 1000),
-            Products("Чернослив", "Из Молдовы", 120.00, 200)
-        ]
+            Products("Чернослив", "Из Молдовы", 120.00, 200),
+        ],
     )
 
 
@@ -34,3 +34,13 @@ def second_categories():
 def for_products():
     return Products("Виноград", "Из Таджикистана", 50.00, 5000)
 
+
+@pytest.fixture
+def for_new_product():
+    dict_ = {
+        "name": "Banana",
+        "description": "Color Yellow",
+        "price": 100,
+        "quantity": 78,
+    }
+    return dict_
