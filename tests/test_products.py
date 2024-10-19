@@ -38,3 +38,8 @@ def test_addition_products(for_products, for_addition_products):
 
     with pytest.raises(AssertionError):
         assert add_prod_result == value_from_err
+
+
+def test_products_str(for_products):
+    """Корректность отображения строкового представления значений класса"""
+    assert str(for_products) == "Виноград, 50.0 руб. Остаток: 5000 шт.\n"

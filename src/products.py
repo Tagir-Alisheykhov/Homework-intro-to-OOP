@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Products:
     """Класс для обработки параметров продукта"""
 
@@ -43,12 +46,12 @@ class Products:
         return new_prod
 
     @property
-    def price(self):
+    def price(self) -> float:
         """Для вывода цены продукта"""
         return float(self.__price)
 
     @price.setter
-    def price(self, new_price: int | float):
+    def price(self, new_price: int | float) -> Any:
         """
         Дополнительные проверки для корректного ввода цены товара пользователем
         """

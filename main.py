@@ -66,11 +66,10 @@ if __name__ == "__main__":
     # print(f"This is sum products {sum_products}")  # This is sum products 11999.8
 
 
-
     # # --------------------------------------------------
     # # Проверки для класса Categories
     # # --------------------------------------------------
-    #
+    # print("НОВЫЙ ВЫЗОВ")
     # product1 = Products("banana", "Afrika", 79.90, 10)
     # product2 = Products("mandarin", "Nepal", 69.80, 20)
     # product3 = Products("mandarin", "India", 49.90, 10)
@@ -89,15 +88,15 @@ if __name__ == "__main__":
     # obj_category.add_product(product5)
     # # -------------------------
     #
-    # print(obj_category.products)
-    # # -------------------------
-    #
-    # print(obj_category.product_counts)
-    # print(obj_category.category_count)
-    #
-    # print(obj_category.products_list)
-    #
-    # print(obj_category.products)
+    # # print(obj_category.products)
+    # # # -------------------------
+    # #
+    # # print(obj_category.product_counts)
+    # # print(obj_category.category_count)
+    # #
+    # # print(obj_category.products_list)
+    # #
+    # # print(obj_category.products)
     # # # banana, 79.9 руб. Остаток: 10 шт.
     # # # mandarin, 69.8 руб. Остаток: 20 шт.
     # # # mandarin, 49.9 руб. Остаток: 10 шт.
@@ -105,8 +104,7 @@ if __name__ == "__main__":
     # # # Kivi, 80.99 руб. Остаток: 50 шт.
     #
     # print(obj_category)
-    #
-    # print("НОВЫЙ ВЫЗОВ")
+
 
     # -----------------------------------------------------------------
     # ПРОВЕРКИ ДЛЯ КЛАССА ИТЕРАТОРА (Вспомогательного)
@@ -127,13 +125,14 @@ if __name__ == "__main__":
     # product2 = Products("mandarin", "Nepal", 69.80, 20)
     # product3 = Products("mandarin", "India", 49.90, 10)
     # product4 = Products("granate", "Russia", 100.99, 40)
-    # # # -------------------------
-    #
+    # # # # -------------------------
+    # #
     # obj_categories_ = Categories("Fruit", "Vkusniye", [product1, product2, product3, product4])
     #
     # obj_category_iterator = ProductsIterator(obj_categories_)
     #
     # for i in obj_category_iterator:
     #     print(i)
-    # # -------------------------
+    #     print(type(i))
+    # # # -------------------------
 

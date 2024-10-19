@@ -2,6 +2,7 @@ import pytest
 
 from src.categories import Categories
 from src.products import Products
+from src.products_iterator import ProductsIterator
 
 
 @pytest.fixture
@@ -49,3 +50,9 @@ def for_new_product():
 @pytest.fixture
 def for_addition_products():
     return Products("Мандарины", "Из Азербайджана", 40.00, 700)  # Сумма: 28000
+
+
+@pytest.fixture
+def products_iterator(second_categories):
+    return ProductsIterator(second_categories)
+
