@@ -5,7 +5,6 @@ class Products:
     description: str
     price: float | int
     quantity: int | float
-    price_test = 20.5
 
     def __init__(self, name, description, price=0.0, quantity=0):
         """Инициализация параметров продукта"""
@@ -13,6 +12,16 @@ class Products:
         self.description = description
         self.__price = price
         self.quantity = quantity
+
+    def __str__(self):
+        """Строковое отображение наименования товара, цены и его количества на складе"""
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт.\n"
+
+    def __add__(self, other):
+        """Сложение продуктов"""
+        sum_current_product = self.__price * self.quantity
+        sum_other_product = other.__price * other.quantity
+        return sum_current_product + sum_other_product
 
     @classmethod
     def new_product(cls, dict_product: dict, list_products: list = None):

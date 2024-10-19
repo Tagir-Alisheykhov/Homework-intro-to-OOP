@@ -1,3 +1,5 @@
+import pytest
+
 from src.products import Products
 
 
@@ -26,3 +28,13 @@ def test_products_invalid_price_update(capsys, for_products):
     message = capsys.readouterr()
     # Проверка сообщения из потока выводов с удалением лишних символов
     assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+
+
+def test_addition_products(for_products, for_addition_products):
+    """Проверка корректности сложения суммы продуктов для класса Products"""
+    add_prod_result = for_products + for_addition_products
+    value_from_err = add_prod_result + 1
+    assert add_prod_result == 278000.0
+
+    with pytest.raises(AssertionError):
+        assert add_prod_result == value_from_err

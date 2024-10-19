@@ -32,7 +32,7 @@ def second_categories():
 
 @pytest.fixture
 def for_products():
-    return Products("Виноград", "Из Таджикистана", 50.00, 5000)
+    return Products("Виноград", "Из Таджикистана", 50.00, 5000)  # Сумма 250000
 
 
 @pytest.fixture
@@ -44,3 +44,8 @@ def for_new_product():
         "quantity": 78,
     }
     return dict_
+
+
+@pytest.fixture
+def for_addition_products():
+    return Products("Мандарины", "Из Азербайджана", 40.00, 700)  # Сумма: 28000

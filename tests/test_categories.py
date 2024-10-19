@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_categories_init(first_categories, second_categories):
     """Тест для класса обработки категорий продуктов"""
     #
@@ -20,7 +23,7 @@ def test_categories_products_property(first_categories):
     """
     assert (
         first_categories.products
-        == "Апельсины, 60.0 руб. Остаток: 1000 шт\nМандарины, 40.0 руб. Остаток: 700 шт\n"
+        == "Апельсины, 60.0 руб. Остаток: 1000 шт.\nМандарины, 40.0 руб. Остаток: 700 шт.\n"
     )
 
 
@@ -29,3 +32,4 @@ def test_categories_products_setter(first_categories, for_products):
     assert len(first_categories.products_list) == 2
     first_categories.add_product(for_products)
     assert len(first_categories.products_list) == 3
+
