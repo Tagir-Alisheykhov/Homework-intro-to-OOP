@@ -14,10 +14,13 @@ if __name__ == "__main__":
     categories = main()
     for category in categories:
         obj_category_iterator = ProductsIterator(category)
-        print()
-        for i in obj_category_iterator:
-            print(i)
-        print()
+        # Выводит общее количество продуктов в каждой категории
+        print(category)
+
+        # Отображение итератора
+        # for i in obj_category_iterator:
+        #     print(i)
+        #     print()
 
     #     print()
     #     print(category.name)

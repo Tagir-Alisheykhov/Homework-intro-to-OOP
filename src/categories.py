@@ -22,9 +22,12 @@ class Categories:
 
     def __str__(self) -> Any:
         """Строковое отображение названия категории товаров, и их количества"""
+        total_number_of_prods = 0
+        for product in self.__products:
+            total_number_of_prods += product.quantity
         return (
-            f"Название категории продуктов: '{self.name}', "
-            f"количество продуктов: {len(self.__products)} шт.\n"
+            f"Название категории продуктов: '{self.name}'. "
+            f"Количество продуктов: {total_number_of_prods} шт.\n"
         )
 
     def add_product(self, product: Products) -> None:
