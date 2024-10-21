@@ -1,3 +1,5 @@
+from typing import Any
+
 from src.products import Products
 
 
@@ -18,24 +20,30 @@ class Categories:
         Categories.category_count += 1
         Categories.product_counts += len(products) if products else 0
 
-    def add_product(self, product: Products):
+    def __str__(self) -> Any:
+        """Строковое отображение названия категории товаров, и их количества"""
+        total_number_of_prods = 0
+        for product in self.__products:
+            total_number_of_prods += product.quantity
+        return (
+            f"Название категории продуктов: '{self.name}'. "
+            f"Количество продуктов: {total_number_of_prods} шт.\n"
+        )
+
+    def add_product(self, product: Products) -> None:
         """Добавление нового товара (объект класса) в список товаров"""
         self.__products.append(product)
         Categories.product_counts += 1
 
     @property
-    def products_list(self):
+    def products_list(self) -> Any:
         """Возврат списка продуктов"""
         return self.__products
 
     @property
-    def products(self) -> str:
+    def products(self) -> Any:
         """"""
         products_str = ""
         for product in self.__products:
-            products_str += (
-                f"{product.name}, "
-                f"{product.price} руб. "
-                f"Остаток: {product.quantity} шт\n"
-            )
+            products_str += str(product)
         return products_str
