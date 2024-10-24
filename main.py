@@ -13,11 +13,11 @@ def main() -> list:
 
 if __name__ == "__main__":
 
-    # categories = main()
-    # for category in categories:
-    #     obj_category_iterator = ProductsIterator(category)
-    #     # Выводит общее количество продуктов в каждой категории
-    #     print(category)
+    categories = main()
+    for category in categories:
+        obj_category_iterator = ProductsIterator(category)
+        # Выводит общее количество продуктов в каждой категории
+        print(category)
 
     # Отображение итератора
     # for i in obj_category_iterator:
@@ -69,30 +69,30 @@ if __name__ == "__main__":
     # sum_products = prod_1 + test_product
     # print(f"This is sum products {sum_products}")  # This is sum products 11999.8
 
-    # # --------------------------------------------------
-    # # Проверки для класса Categories
-    # # --------------------------------------------------
-    print("НОВЫЙ ВЫЗОВ")
-    product1 = Products("banana", "Afrika", 79.90, 10)
-    product2 = Products("mandarin", "Nepal", 69.80, 20)
-    product3 = Products("mandarin", "India", 49.90, 10)
-    product4 = Products("granate", "Russia", 100.99, 40)
+    # # # --------------------------------------------------
+    # # # Проверки для класса Categories
+    # # # --------------------------------------------------
+    # print("НОВЫЙ ВЫЗОВ")
+    # product1 = Products("banana", "Afrika", 79.90, 10)
+    # product2 = Products("mandarin", "Nepal", 69.80, 20)
+    # product3 = Products("mandarin", "India", 49.90, 10)
+    # product4 = Products("granate", "Russia", 100.99, 40)
+    # # # -------------------------
+    #
+    # obj_category = Categories(
+    #     "Fruit", "Vkusniye", [product1, product2, product3, product4]
+    # )
+    # print(obj_category.products)
+    # print(obj_category.product_counts)
+    # print(obj_category.category_count)
     # # -------------------------
-
-    obj_category = Categories(
-        "Fruit", "Vkusniye", [product1, product2, product3, product4]
-    )
-    print(obj_category.products)
-    print(obj_category.product_counts)
-    print(obj_category.category_count)
-    # -------------------------
-
-    product5 = Products("Kivi", "green", 80.99, 50)
-    # # -------------------------
-
-    # # # # obj_category.add_product(1)  # TypeError (Неправильный тип данных)
-
-    obj_category.add_product(product5)
+    #
+    # product5 = Products("Kivi", "green", 80.99, 50)
+    # # # -------------------------
+    #
+    # # # # # obj_category.add_product(1)  # TypeError (Неправильный тип данных)
+    #
+    # obj_category.add_product(product5)
 
     # # -------------------------
     #
