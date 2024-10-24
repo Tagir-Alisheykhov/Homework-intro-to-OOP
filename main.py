@@ -2,6 +2,8 @@ from src.categories import Categories
 from src.products import Products
 from src.utils import create_objects_from_json
 from src.products_iterator import ProductsIterator
+from src.lawngrass import LawnGrass
+from src.smartphone import Smartphone
 
 
 def main() -> list:
@@ -11,11 +13,11 @@ def main() -> list:
 
 if __name__ == "__main__":
 
-    categories = main()
-    for category in categories:
-        obj_category_iterator = ProductsIterator(category)
-        # Выводит общее количество продуктов в каждой категории
-        print(category)
+    # categories = main()
+    # for category in categories:
+    #     obj_category_iterator = ProductsIterator(category)
+    #     # Выводит общее количество продуктов в каждой категории
+    #     print(category)
 
         # Отображение итератора
         # for i in obj_category_iterator:
@@ -86,12 +88,12 @@ if __name__ == "__main__":
     # # -------------------------
     #
     # product5 = Products("Kivi", "green", 80.99, 50)
-    # # -------------------------
-    #
-    # obj_category.add_product(product5)
-    # # -------------------------
-    #
-    # # print(obj_category.products)
+    # # # -------------------------
+    # #
+    # obj_category.add_product(1)
+    # # # -------------------------
+    # #
+    # print(obj_category.products)
     # # # -------------------------
     # #
     # # print(obj_category.product_counts)
@@ -100,13 +102,24 @@ if __name__ == "__main__":
     # # print(obj_category.products_list)
     # #
     # # print(obj_category.products)
-    # # # banana, 79.9 руб. Остаток: 10 шт.
-    # # # mandarin, 69.8 руб. Остаток: 20 шт.
-    # # # mandarin, 49.9 руб. Остаток: 10 шт.
-    # # # granate, 100.99 руб. Остаток: 40 шт.
-    # # # Kivi, 80.99 руб. Остаток: 50 шт.
+    # banana, 79.9 руб. Остаток: 10 шт.
+    # mandarin, 69.8 руб. Остаток: 20 шт.
+    # mandarin, 49.9 руб. Остаток: 10 шт.
+    # granate, 100.99 руб. Остаток: 40 шт.
+    # Kivi, 80.99 руб. Остаток: 50 шт.
     #
     # print(obj_category)
+
+    # ---- Отдельная проверка для Categories ----
+
+    # smartphone = Smartphone("Samsung", "Современный дизайн", 90000.0, 1,
+    #                         "2-х ядерный процессор", "Galaxy C23 Ultra", 256, "Серый")
+    # lawn_grass = LawnGrass("Трава", "Ландшафтный дизайн", 60.0, 30,
+    #                       "Turkey", 10, "Green")
+
+
+
+
 
 
     # -----------------------------------------------------------------
@@ -139,3 +152,21 @@ if __name__ == "__main__":
     #     print(type(i))
     # # # -------------------------
 
+
+    # # -----------------------------------------------------------------
+    # # ПРОВЕРКИ ДЛЯ КЛАССОВ 'LawnGrass' и 'Smartphone'
+    # # -----------------------------------------------------------------
+    #
+    # smartphone = Smartphone("Samsung", "Современный дизайн", 90000.0, 1,
+    #                         "2-х ядерный процессор", "Galaxy C23 Ultra", 256, "Серый")
+    # lawn_grass = LawnGrass("Трава", "Ландшафтный дизайн", 60.0, 30,
+    #                       "Turkey", 10, "Green")
+
+    # Проверка на то, что однотипные продукты складываются успешно
+    # print(smartphone + smartphone)  # 180000.0
+    # print(lawn_grass + lawn_grass)  # 3600.0
+
+    # print(lawn_grass + 1)  # raise TypeError
+
+    # Проверка на то, что не однотипные продукты вызывают ошибку при сложении
+    # print(lawn_grass + smartphone)  # TypeError
