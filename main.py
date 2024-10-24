@@ -1,9 +1,9 @@
 from src.categories import Categories
-from src.products import Products
-from src.utils import create_objects_from_json
-from src.products_iterator import ProductsIterator
 from src.lawngrass import LawnGrass
+from src.products import Products
+from src.products_iterator import ProductsIterator
 from src.smartphone import Smartphone
+from src.utils import create_objects_from_json
 
 
 def main() -> list:
@@ -19,17 +19,16 @@ if __name__ == "__main__":
     #     # Выводит общее количество продуктов в каждой категории
     #     print(category)
 
-        # Отображение итератора
-        # for i in obj_category_iterator:
-        #     print(i)
-        #     print()
+    # Отображение итератора
+    # for i in obj_category_iterator:
+    #     print(i)
+    #     print()
 
     #     print()
     #     print(category.name)
     #     print(category.description)
     #     print(category.products)
     #     print(category)  # Выводит строковое отображение категории
-
 
     # # --------------------------------------------------
     # # Проверки для класса Products
@@ -70,29 +69,33 @@ if __name__ == "__main__":
     # sum_products = prod_1 + test_product
     # print(f"This is sum products {sum_products}")  # This is sum products 11999.8
 
-
     # # --------------------------------------------------
     # # Проверки для класса Categories
     # # --------------------------------------------------
-    # print("НОВЫЙ ВЫЗОВ")
-    # product1 = Products("banana", "Afrika", 79.90, 10)
-    # product2 = Products("mandarin", "Nepal", 69.80, 20)
-    # product3 = Products("mandarin", "India", 49.90, 10)
-    # product4 = Products("granate", "Russia", 100.99, 40)
-    # # # -------------------------
-    #
-    # obj_category = Categories("Fruit", "Vkusniye", [product1, product2, product3, product4])
-    # print(obj_category.products)
-    # print(obj_category.product_counts)
-    # print(obj_category.category_count)
+    print("НОВЫЙ ВЫЗОВ")
+    product1 = Products("banana", "Afrika", 79.90, 10)
+    product2 = Products("mandarin", "Nepal", 69.80, 20)
+    product3 = Products("mandarin", "India", 49.90, 10)
+    product4 = Products("granate", "Russia", 100.99, 40)
+    # # -------------------------
+
+    obj_category = Categories(
+        "Fruit", "Vkusniye", [product1, product2, product3, product4]
+    )
+    print(obj_category.products)
+    print(obj_category.product_counts)
+    print(obj_category.category_count)
+    # -------------------------
+
+    product5 = Products("Kivi", "green", 80.99, 50)
+    # # -------------------------
+
+    # # # # obj_category.add_product(1)  # TypeError (Неправильный тип данных)
+
+    obj_category.add_product(product5)
+
     # # -------------------------
     #
-    # product5 = Products("Kivi", "green", 80.99, 50)
-    # # # -------------------------
-    # #
-    # obj_category.add_product(1)
-    # # # -------------------------
-    # #
     # print(obj_category.products)
     # # # -------------------------
     # #
@@ -116,11 +119,6 @@ if __name__ == "__main__":
     #                         "2-х ядерный процессор", "Galaxy C23 Ultra", 256, "Серый")
     # lawn_grass = LawnGrass("Трава", "Ландшафтный дизайн", 60.0, 30,
     #                       "Turkey", 10, "Green")
-
-
-
-
-
 
     # -----------------------------------------------------------------
     # ПРОВЕРКИ ДЛЯ КЛАССА ИТЕРАТОРА (Вспомогательного)
@@ -152,21 +150,25 @@ if __name__ == "__main__":
     #     print(type(i))
     # # # -------------------------
 
-
-    # # -----------------------------------------------------------------
-    # # ПРОВЕРКИ ДЛЯ КЛАССОВ 'LawnGrass' и 'Smartphone'
-    # # -----------------------------------------------------------------
-    #
+    # # # -----------------------------------------------------------------
+    # # # ПРОВЕРКИ ДЛЯ КЛАССОВ 'LawnGrass' и 'Smartphone'
+    # # # -----------------------------------------------------------------
+    # # #
+    # product1 = Products("banana", "Afrika", 79.90, 10)
     # smartphone = Smartphone("Samsung", "Современный дизайн", 90000.0, 1,
     #                         "2-х ядерный процессор", "Galaxy C23 Ultra", 256, "Серый")
     # lawn_grass = LawnGrass("Трава", "Ландшафтный дизайн", 60.0, 30,
     #                       "Turkey", 10, "Green")
-
-    # Проверка на то, что однотипные продукты складываются успешно
+    #
+    # # # Проверка на то, что однотипные продукты складываются успешно
     # print(smartphone + smartphone)  # 180000.0
     # print(lawn_grass + lawn_grass)  # 3600.0
-
-    # print(lawn_grass + 1)  # raise TypeError
-
-    # Проверка на то, что не однотипные продукты вызывают ошибку при сложении
-    # print(lawn_grass + smartphone)  # TypeError
+    #
+    # print(product1 + product1)  # 1598
+    # print(product1 + 1)  # raise TypeError
+    #
+    # # print(lawn_grass + "it is string")  # raise TypeError
+    #
+    # # Проверка на то, что не однотипные продукты вызывают ошибку при сложении
+    # # print(lawn_grass + smartphone)  # TypeError
+    # # print(smartphone + lawn_grass)  # TypeError

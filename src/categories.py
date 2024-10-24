@@ -40,7 +40,7 @@ class Categories:
 
     @property
     def products_list(self) -> Any:
-        """Возврат списка продуктов"""
+        """Вызов списка продуктов"""
         return self.__products
 
     @property

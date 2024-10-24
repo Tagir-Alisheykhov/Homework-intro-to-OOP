@@ -22,7 +22,7 @@ class Products:
 
     def __add__(self, other):
         """Сложение продуктов"""
-        if isinstance(other, Products):
+        if isinstance(other, self.__class__):
             sum_current_product = self.__price * self.quantity
             sum_other_product = other.__price * other.quantity
             return sum_current_product + sum_other_product
