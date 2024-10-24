@@ -36,7 +36,10 @@ def test_categories_products_setter(first_categories, for_products):
 
 def test_categories_str(first_categories):
     """Проверка корректного строкового отображения значений класса"""
-    assert str(first_categories) == "Название категории продуктов: 'Фрукты', количество продуктов: 2 шт.\n"
+    assert (
+        str(first_categories)
+        == "Название категории продуктов: 'Фрукты'. Количество продуктов: 1700 шт.\n"
+    )
 
 
 # Для того чтобы значения 'fixture' не увеличились и не обновились,
@@ -55,3 +58,11 @@ def test_products_iterator(products_iterator):
     with pytest.raises(StopIteration):
         assert next(products_iterator).name
 
+
+def test_invalid_addition_value(second_categories, for_addition_products):
+    """
+    Проверка вызова исключения при добавлении неправильного
+    типа данных в список товаров категории
+    """
+    with pytest.raises(TypeError):
+        assert second_categories.add_product("incorrect_value")

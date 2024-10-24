@@ -32,12 +32,15 @@ class Categories:
 
     def add_product(self, product: Products) -> None:
         """Добавление нового товара (объект класса) в список товаров"""
-        self.__products.append(product)
-        Categories.product_counts += 1
+        if isinstance(product, Products):
+            self.__products.append(product)
+            Categories.product_counts += 1
+        else:
+            raise TypeError("Неправильный тип данных")
 
     @property
     def products_list(self) -> Any:
-        """Возврат списка продуктов"""
+        """Вызов списка продуктов"""
         return self.__products
 
     @property

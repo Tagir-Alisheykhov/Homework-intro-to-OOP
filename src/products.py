@@ -22,9 +22,12 @@ class Products:
 
     def __add__(self, other):
         """Сложение продуктов"""
-        sum_current_product = self.__price * self.quantity
-        sum_other_product = other.__price * other.quantity
-        return sum_current_product + sum_other_product
+        if isinstance(other, self.__class__):
+            sum_current_product = self.__price * self.quantity
+            sum_other_product = other.__price * other.quantity
+            return sum_current_product + sum_other_product
+        else:
+            raise TypeError("Неверный тип данных")
 
     @classmethod
     def new_product(cls, dict_product: dict, list_products: list = None):
